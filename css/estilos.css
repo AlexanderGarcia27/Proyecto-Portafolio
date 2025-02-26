@@ -1,30 +1,41 @@
-/* styles.css */
+/* Asegura que el nav no se agrande más de lo necesario */
 .header {
     background-color: rgba(90, 88, 166, 0.82);
-    padding: 10px 0;
+    padding: 15px 0; /* Reduce el padding para mantener altura fija */
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
+    z-index: 1000;
 }
 
+/* Ajusta la navegación */
 .header__nav {
-    text-align: center;
+    display: flex;
+    justify-content: space-between; /* Espacia elementos */
+    align-items: center;
+    padding: 8px 30px;
 }
 
+/* Estiliza el texto "Portafolio digital" */
+.header__title {
+    font-size: 30px; /* Tamaño de la fuente más grande */
+    font-weight: bold;
+    color: #170459;
+    margin: 0; /* Evita margen extra */
+}
+
+/* Lista de navegación */
 .header__list {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: right;
+    gap: 25px;
 }
 
-.header__item {
-    display: inline;
-}
-
+/* Asegura que el texto no tenga subrayado */
 .header__link {
     text-decoration: none;
     color: #170459;
@@ -35,4 +46,38 @@
 
 .header__link:hover {
     color: white;
+    text-decoration: none;
+}
+
+/* Botón menú hamburguesa */
+.header__toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #170459;
+    cursor: pointer;
+}
+
+/* Responsivo: Menú hamburguesa en móviles */
+@media (max-width: 768px) {
+    .header__toggle {
+        display: block; /* Se muestra el botón hamburguesa */
+    }
+
+    .header__list {
+        display: none; /* Se oculta en móvil */
+        flex-direction: column;
+        background-color: rgba(90, 88, 166, 0.82);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .header__list--active {
+        display: flex; /* Mostrar menú cuando se active */
+    }
 }
