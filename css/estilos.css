@@ -1,7 +1,8 @@
 /* Asegura que el nav no se agrande más de lo necesario */
 .header {
     background-color: rgba(90, 88, 166, 0.82);
-    padding: 15px 0; /* Reduce el padding para mantener altura fija */
+    padding: 15px 0;
+    /* Reduce el padding para mantener altura fija */
     position: fixed;
     width: 100%;
     top: 0;
@@ -12,17 +13,21 @@
 /* Ajusta la navegación */
 .header__nav {
     display: flex;
-    justify-content: space-between; /* Espacia elementos */
+    justify-content: space-between;
+    /* Espacia elementos */
     align-items: center;
     padding: 8px 30px;
 }
 
 /* Estiliza el texto "Portafolio digital" */
 .header__title {
-    font-size: 30px; /* Tamaño de la fuente más grande */
+    font-size: 30px;
+    /* Tamaño de la fuente más grande */
     font-weight: bold;
     color: #170459;
-    margin: 0; /* Evita margen extra */
+    margin: 0;
+    /* Evita margen extra */
+    font-family: "Arial", sans-serif;
 }
 
 /* Lista de navegación */
@@ -39,9 +44,9 @@
 .header__link {
     text-decoration: none;
     color: #170459;
-    font-weight: bold;
     font-size: 16px;
     transition: color 0.3s;
+    font-family: "Arial", sans-serif;
 }
 
 .header__link:hover {
@@ -59,25 +64,130 @@
     cursor: pointer;
 }
 
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    /* Previene desbordamiento horizontal */
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.hero__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Contenedor del texto */
+.hero__content {
+    position: absolute;
+    text-align: center;
+    color: #B3B3B3;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%;
+    /* Asegura que el contenido no ocupe toda la pantalla */
+    z-index: 1;
+    /* Asegura que el contenido esté sobre la imagen */
+}
+
+/* Estilo del título */
+.hero__title {
+    font-size: 60px;
+    font-weight: bold;
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    word-wrap: break-word;
+    /* Evita que las palabras se desborden */
+}
+
+/* Estilo del subtítulo */
+.hero__subtitle {
+    font-size: 30px;
+    margin: 5px 0 0;
+    font-family: "Arial", sans-serif;
+}
+
+/* Responsivo: Ajuste de texto en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .hero__title {
+        font-size: 8vw;
+        margin: -100px;
+    }
+
+    .hero__subtitle {
+        font-size: 4vw;
+        margin: 100px;
+        /* Ajusta el tamaño de la fuente basado en el ancho de la pantalla */
+    }
+
+    .hero__content {
+        padding: 15px;
+        /* Reduce el padding para que el texto no quede tan pegado a los bordes */
+        top: 50%;
+        /* Centra verticalmente el texto */
+        transform: translateY(-50%);
+        /* Ajuste para centrar el texto perfectamente */
+    }
+
+    .hero__image {
+        width: 100%;
+        height: 50%;
+    }
+}
+
 /* Responsivo: Menú hamburguesa en móviles */
 @media (max-width: 768px) {
     .header__toggle {
-        display: block; /* Se muestra el botón hamburguesa */
+        display: block;
+        /* Se muestra el botón hamburguesa */
     }
 
     .header__list {
-        display: none; /* Se oculta en móvil */
+        display: none;
+        /* Se oculta en móvil */
         flex-direction: column;
         background-color: rgba(90, 88, 166, 0.82);
         position: absolute;
         top: 60px;
         right: 0;
-        width: 200px;
-        padding: 10px;
-        border-radius: 10px;
+        width: 100px;
+        /* Reduce el ancho */
+        padding: 8px;
+        /* Menos padding */
+        border-radius: 8px;
+    }
+
+    .header__item {
+        padding: 1px 0;
+        /* Reduce el espacio entre elementos */
+        text-align: center;
+        /* Centrar los links */
+    }
+
+    .header__link {
+        font-size: 14px;
+        /* Reduce el tamaño del texto */
     }
 
     .header__list--active {
-        display: flex; /* Mostrar menú cuando se active */
+        display: flex;
     }
 }
