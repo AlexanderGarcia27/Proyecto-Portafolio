@@ -1,8 +1,7 @@
 /* Asegura que el nav no se agrande más de lo necesario */
 .header {
-    background-color: rgba(90, 88, 166, 0.82);
+    background-color: rgba(90, 88, 166);
     padding: 15px 0;
-    /* Reduce el padding para mantener altura fija */
     position: fixed;
     width: 100%;
     top: 0;
@@ -14,7 +13,6 @@
 .header__nav {
     display: flex;
     justify-content: space-between;
-    /* Espacia elementos */
     align-items: center;
     padding: 8px 30px;
 }
@@ -22,11 +20,9 @@
 /* Estiliza el texto "Portafolio digital" */
 .header__title {
     font-size: 30px;
-    /* Tamaño de la fuente más grande */
     font-weight: bold;
     color: #170459;
     margin: 0;
-    /* Evita margen extra */
     font-family: "Arial", sans-serif;
 }
 
@@ -51,7 +47,6 @@
 
 .header__link:hover {
     color: white;
-    text-decoration: none;
 }
 
 /* Botón menú hamburguesa */
@@ -71,9 +66,9 @@ body {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
-    /* Previene desbordamiento horizontal */
 }
 
+/* Sección Hero */
 .hero {
     position: relative;
     width: 100%;
@@ -83,6 +78,8 @@ body {
     justify-content: center;
     overflow: hidden;
     margin-top: 80px;
+    margin-bottom: 0; /* Asegura que no haya margen inferior extra */
+    padding-bottom: 0;
 }
 
 .hero__image {
@@ -103,9 +100,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     max-width: 90%;
-    /* Asegura que el contenido no ocupe toda la pantalla */
     z-index: 1;
-    /* Asegura que el contenido esté sobre la imagen */
 }
 
 /* Estilo del título */
@@ -115,7 +110,6 @@ body {
     font-family: "Arial", sans-serif;
     margin: 0;
     word-wrap: break-word;
-    /* Evita que las palabras se desborden */
 }
 
 /* Estilo del subtítulo */
@@ -125,31 +119,90 @@ body {
     font-family: "Arial", sans-serif;
 }
 
+/* Sección Acerca de mí */
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra la sección sin añadir margen adicional */
+    padding: 20px 0;
+    gap: 10px;
+}
+
+/* Contenido de texto */
+.about__content {
+    flex: 1;
+    max-width: 600px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Título */
+.about__title {
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-family: "Arial", sans-serif;
+    color: #393459;
+}
+
+/* Párrafo */
+.about__text {
+    font-size: 23px;
+    line-height: 1.6;
+    text-align: center;
+    color: black;
+    font-family: "Arial", sans-serif;
+}
+
+/* Imagen */
+.about__image {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
 /* Responsivo: Ajuste de texto en pantallas más pequeñas */
 @media (max-width: 768px) {
     .hero__title {
         font-size: 8vw;
-        margin: -100px;
     }
 
     .hero__subtitle {
         font-size: 4vw;
-        margin: 100px;
-        /* Ajusta el tamaño de la fuente basado en el ancho de la pantalla */
     }
 
     .hero__content {
         padding: 15px;
-        /* Reduce el padding para que el texto no quede tan pegado a los bordes */
         top: 50%;
-        /* Centra verticalmente el texto */
         transform: translateY(-50%);
-        /* Ajuste para centrar el texto perfectamente */
     }
 
-    .hero__image {
-        width: 100%;
-        height: 50%;
+    .hero {
+        height: 50vh;
+        margin-bottom: 0; /* Elimina espacio extra */
+        padding-bottom: 0;
+    }
+
+    .about {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .about__title {
+        font-size: 20px;
+    }
+
+    .about__text {
+        font-size: 14px;
+    }
+
+    .about__image {
+        width: 200px;
     }
 }
 
@@ -157,34 +210,27 @@ body {
 @media (max-width: 768px) {
     .header__toggle {
         display: block;
-        /* Se muestra el botón hamburguesa */
     }
 
     .header__list {
         display: none;
-        /* Se oculta en móvil */
         flex-direction: column;
         background-color: rgba(90, 88, 166, 0.82);
         position: absolute;
         top: 60px;
         right: 0;
         width: 100px;
-        /* Reduce el ancho */
         padding: 8px;
-        /* Menos padding */
         border-radius: 8px;
     }
 
     .header__item {
         padding: 1px 0;
-        /* Reduce el espacio entre elementos */
         text-align: center;
-        /* Centrar los links */
     }
 
     .header__link {
         font-size: 14px;
-        /* Reduce el tamaño del texto */
     }
 
     .header__list--active {
