@@ -1,6 +1,6 @@
 /* Asegura que el nav no se agrande más de lo necesario */
 .header {
-    background-color: rgba(90, 88, 166);
+    background-color: #6C63FF;
     padding: 15px 0;
     position: fixed;
     width: 100%;
@@ -309,6 +309,13 @@ body {
     width: 70px;
 }
 
+.project button:hover {
+    transform: scale(1.1);
+}
+.project:hover {
+    transform: scale(1.1);
+}
+
 /* Diseño responsivo */
 @media (max-width: 768px) {
     .projects__container {
@@ -448,5 +455,125 @@ body {
     .certifications__text {
         font-size: 14px;
     
+    }
+}
+
+/* Sección Estudios */
+.studies {
+    padding: 2rem;
+}
+
+.studies__title {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-family: "Arial", sans-serif;
+    color: #393459;
+}
+
+.studies__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.studies__text {
+    max-width: 70%;
+}
+
+.studies__degree {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Arial", sans-serif;
+}
+
+.studies__current {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Arial", sans-serif;
+}
+
+.studies__logo {
+    flex-shrink: 0;
+}
+
+.studies__image {
+    width: 100px;
+    height: auto;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .studies__content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .studies__text {
+        max-width: 100%;
+    }
+
+    .studies__image {
+        width: 80px;
+    }
+    .studies__degree {
+        font-size: 12px;
+    }
+    
+    .studies__current {
+        font-size: 12px;
+    }
+    .studies__title {
+        font-size: 20px;
+    }
+}
+/* Footer */
+.footer {
+    background-color: #6C63FF;
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.footer__title {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-family: "Arial", sans-serif;
+    color: black;
+}
+
+.footer__icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.footer__icon img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.footer__icon img:hover {
+    transform: scale(1.1);
+}
+@media (max-width: 768px) {
+    .footer {
+        padding: 10px; /* Reduce el padding */
+        height: auto; /* Permite que el contenido defina la altura */
+    }
+
+    .footer__icons {
+        display: flex;
+        flex-wrap: wrap; /* Permite que los íconos se acomoden en varias líneas si es necesario */
+        justify-content: center; /* Centra los íconos */
+        gap: 8px; /* Espacio entre los íconos */
+    }
+
+    .footer__icon img {
+        width: 30px; /* Reduce el tamaño de los íconos */
+        height: 30px;
+    }
+    .footer__title {
+        font-size: 20px;
     }
 }
